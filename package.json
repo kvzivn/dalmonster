@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build && node scripts/prepare-deployment.mjs",
+    "build": "node scripts/asset-manifest.mjs && vite build && node scripts/prepare-deployment.mjs",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "predev": "node scripts/asset-manifest.mjs"
   },
   "dependencies": {
     "three": "^0.180.0"

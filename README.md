@@ -41,6 +41,8 @@ Browser checks use Playwright with a local Chromium CDP endpoint recorded in `.d
 
 Targets **30 fps at 1080p on Apple M1**, achieved in local browser tests. Other hardware defaults to a 60 fps cap but has not been benchmarked.
 
-Hosted at [dalmonster.vercel.app](https://dalmonster.vercel.app) on Vercel. Pushes to `main` build and deploy automatically. The first release requires Vercel login.
+Hosted at [dalmonster.vercel.app](https://dalmonster.vercel.app) on Vercel. Pushes to `main` build and deploy automatically. The game is public and does not require an account.
+
+The loading screen shows a white, byte-weighted progress bar beneath the artwork’s loading text.
 
 The production output is `dist/`. The build includes only used assets and checks a portable **25 MiB per-file asset budget**. After rebuilding large environment assets, run `python3 scripts/optimize-scene-textures.py` (requires Pillow) before building.

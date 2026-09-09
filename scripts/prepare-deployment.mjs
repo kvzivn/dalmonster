@@ -1,11 +1,9 @@
+import { getRuntimeAssets } from './asset-manifest.mjs';
 // Keep original Blender exports in source control, but publish only runtime assets.
 import { readFile, readdir, rm, stat } from 'node:fs/promises';
 import { resolve } from 'node:path';
 const root = resolve(import.meta.dirname, '..');
-const source = await readFile(resolve(root, 'src/main.js'), 'utf8');
-const required = new Set([...source.matchAll(/["'`]\/assets\/([^"'`$]+)["'`]/g)].map(m => m[1]));
-// This small family is loaded through a template literal in the mural loop.
-for (const name of ['palestina', 'gaza', 'mollan']) required.add(`graffiti-${name}.png`);
+const required = await getRuntimeAssets();
 for (const name of required) {
   const file = resolve(root, 'dist/assets', name);
   if (!(await stat(file)).isFile()) throw new Error(`Missing runtime asset: ${name}`);

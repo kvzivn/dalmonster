@@ -1,4 +1,5 @@
 import "./style.css";
+import { createLoadingProgress } from "./loading-progress.js";
 import { CAMERA, SPAWN, groundHeight } from "./neighbourhood.js";
 import { buildArrivalStreet } from "./arrival-street.js";
 import { animateCharacter } from "./character-motion.js";
@@ -142,6 +143,9 @@ const wetReflection = createWetReflection();
 const nightBloom = createNightBloom(renderer);
 const loader = new GLTFLoader(),
   tl = new THREE.TextureLoader();
+const loadingProgress = createLoadingProgress($("load-progress"));
+loadingProgress.track(loader);
+loadingProgress.track(tl);
 async function init() {
   try {
     const [
@@ -165,7 +169,7 @@ async function init() {
       loader.loadAsync("/assets/environment-web.glb"),
       loader.loadAsync("/assets/player-refined.glb"),
       loader.loadAsync("/assets/npc-refined.glb"),
-      fetch("/assets/environment-collisions.json").then((r) => r.json()),
+      loadingProgress.json("/assets/environment-collisions.json"),
     ]);
     const groundLight = await tl.loadAsync("/assets/ground-lightmap.png");
     groundLight.colorSpace = THREE.SRGBColorSpace;
@@ -264,7 +268,7 @@ async function init() {
       loader.loadAsync("/assets/pavement-joins.glb"),
       loader.loadAsync("/assets/architecture-web.glb"),
       loader.loadAsync("/assets/cosy-street-finish.glb"),
-      fetch("/assets/cosy-street-obstacles.json").then(r => r.json()),
+      loadingProgress.json("/assets/cosy-street-obstacles.json"),
       loader.loadAsync("/assets/trees-polish.glb"),
       loader.loadAsync("/assets/courtyard-edge.glb"),
     ]);
@@ -616,6 +620,8 @@ async function init() {
     ready = true;
     updateCamera(1);
     nightBloom.render(scene, camera);
+    loadingProgress.finish();
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     $("loading").style.opacity = "0";
     setTimeout(() => ($("loading").hidden = true), 850);
     canvas.focus();
