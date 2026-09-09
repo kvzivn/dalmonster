@@ -1,0 +1,128 @@
+[
+  {
+    "x": -20.023,
+    "z": -19.727,
+    "radius": 0.6,
+    "name": "produce display"
+  },
+  {
+    "x": -23.259,
+    "z": -21.955,
+    "radius": 0.43,
+    "name": "chalkboard"
+  },
+  {
+    "x": -23.218,
+    "z": -22.69,
+    "radius": 0.23,
+    "name": "herb pot"
+  },
+  {
+    "x": -35.241,
+    "z": -20.109,
+    "radius": 0.96,
+    "name": "SlattedBench"
+  },
+  {
+    "x": -16.729,
+    "z": -19.265,
+    "radius": 0.91,
+    "name": "PaleGreenBench"
+  },
+  {
+    "x": -24.349,
+    "z": -12.949,
+    "radius": 0.72,
+    "name": "CityBicycle"
+  },
+  {
+    "x": -34.025,
+    "z": -17.915,
+    "radius": 0.72,
+    "name": "CityBicycle"
+  },
+  {
+    "x": -23.885,
+    "z": -12.403,
+    "radius": 0.43,
+    "name": "BicycleHoop"
+  },
+  {
+    "x": -25.154,
+    "z": -13.377,
+    "radius": 0.43,
+    "name": "BicycleHoop"
+  },
+  {
+    "x": -32.057,
+    "z": -18.674,
+    "radius": 0.43,
+    "name": "BicycleHoop"
+  },
+  {
+    "x": -33.666,
+    "z": -18.547,
+    "radius": 0.58,
+    "name": "NoticeBoard"
+  },
+  {
+    "x": -22.273,
+    "z": -10.726,
+    "radius": 0.48,
+    "name": "PosterLightbox"
+  },
+  {
+    "x": -36.656,
+    "z": -20.564,
+    "radius": 0.4,
+    "name": "UtilityCabinet"
+  },
+  {
+    "x": -39.33,
+    "z": -22.994,
+    "radius": 0.4,
+    "name": "UtilityCabinet"
+  },
+  {
+    "x": -22.268,
+    "z": -11.554,
+    "radius": 0.12,
+    "name": "Bollard"
+  },
+  {
+    "x": -25.802,
+    "z": -14.505,
+    "radius": 0.12,
+    "name": "Bollard"
+  },
+  {
+    "x": -34.327,
+    "z": -20.807,
+    "radius": 0.12,
+    "name": "Bollard"
+  },
+  {
+    "x": -29.215,
+    "z": -28.947,
+    "radius": 0.21,
+    "name": "ApproachCone"
+  },
+  {
+    "x": -29.599,
+    "z": -28.447,
+    "radius": 0.21,
+    "name": "ApproachCone"
+  },
+  {
+    "x": -35.139,
+    "z": -21.228,
+    "radius": 0.21,
+    "name": "ApproachCone"
+  },
+  {
+    "x": -35.522,
+    "z": -20.728,
+    "radius": 0.21,
+    "name": "ApproachCone"
+  }
+]

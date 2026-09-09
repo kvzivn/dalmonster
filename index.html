@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#111512" />
+    <title>Dälmönster · Knarkrondellen</title>
+    <link rel="preload" as="image" href="/images/loading.webp" />
+    <style>
+      html,body{margin:0;background:#0e1314}
+      #loading{position:fixed;inset:0;z-index:20;background:#0e1314;transition:opacity .6s}
+      #loading img{display:block;width:100%;height:100%;object-fit:contain}
+    </style>
+  </head>
+  <body>
+    <main id="game" aria-label="Dälmönster, ett spel i Knarkrondellen">
+      <canvas
+        id="world"
+        tabindex="0"
+        aria-label="Spelvärld. Flytta med WASD eller piltangenter. Dra musen för att rotera. Skrolla för att zooma."
+      ></canvas>
+    </main>
+    <div id="loading" role="status" aria-label="Laddar Dälmönster">
+      <img src="/images/loading.webp" alt="" fetchpriority="high" />
+      <p id="load-status" role="alert" hidden></p>
+    </div>
+    <header id="hud">
+      <div>
+        <h1>KNARKRONDELLEN</h1>
+        <p id="objective">Lämna tillbaka efterfestens högtalare</p>
+      </div>
+      <span id="money">3 400 kr</span>
+    </header>
+    <div id="nearby" hidden><kbd>E</kbd> Prata med Big Black</div>
+    <section id="dialogue" aria-live="polite" hidden>
+      <div class="dialogue-top">
+        <span id="speaker">BIG BLACK</span
+        ><span class="dialogue-place">Knarkrondellen · 02:17</span>
+      </div>
+      <p id="line"></p>
+      <button id="next">
+        <kbd>E</kbd> <span>Fortsätt</span> <span class="arrow">↗</span>
+      </button>
+    </section>
+    <div id="toast" role="status" hidden>
+      <span>Swish</span>
+      <p>+250 kr · Tack för hjälpen!</p>
+    </div>
+    <div id="boundary" hidden>Vi håller oss i kvarteret i natt.</div>
+    <div id="perf" hidden></div>
+    <div id="vignette"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
