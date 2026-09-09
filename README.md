@@ -3,8 +3,7 @@
 </p>
 
 <p align="center">
-  A playable Three.js night scene inspired by Folkets Park.<br />
-  Original Blender models and generated textures. No downloaded art assets.
+  A single-player RPG set on the streets of Malmö.
 </p>
 
 ## Play
